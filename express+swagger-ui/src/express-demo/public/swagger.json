@@ -1,0 +1,319 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a VDB Plot Service.",
+        "version": "1.0.0",
+        "title": "VDB Plot",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "jianfeng.liu@halliburton.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "localhost:8002",
+    "basePath": "/",
+    "tags": [
+        {
+            "name":"vdb",
+            "description":"APIs about VDB"
+        }
+    ],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/vdb/classes": {
+            "get": {
+                "tags": [
+                    "vdb"
+                ],
+                "summary": "Get classes from target vdb",
+                "description": "Get classes from target vdb",
+                "operationId": "",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "vdbname",
+                        "in": "query",
+                        "description": "vdb name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "headers": {
+                            "X-Rate-Limit": {
+                                "type": "integer",
+                                "format": "int32",
+                                "description": ""
+                            },
+                            "X-Expires-After": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "date in UTC when token expires"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid username/password supplied"
+                    }
+                }
+            }
+        },
+        "/vdb/items": {
+            "get": {
+                "tags": [
+                    "vdb"
+                ],
+                "summary": "Get itmes from target vdb and classid",
+                "description": "Get itmes from target vdb and classid",
+                "operationId": "",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "vdbname",
+                        "in": "query",
+                        "description": "vdb name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "casetype",
+                        "in": "query",
+                        "description": "case type",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "casename",
+                        "in": "query",
+                        "description": "case name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "classid",
+                        "in": "query",
+                        "description": "class id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "headers": {
+                            "X-Rate-Limit": {
+                                "type": "integer",
+                                "format": "int32",
+                                "description": ""
+                            },
+                            "X-Expires-After": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "date in UTC when token expires"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid username/password supplied"
+                    }
+                }
+            }
+        },
+        "/vdb/variables": {
+            "get": {
+                "tags": [
+                    "vdb"
+                ],
+                "summary": "Get variables from target vdb and classid",
+                "description": "Get variables from target vdb and classid",
+                "operationId": "",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "vdbname",
+                        "in": "query",
+                        "description": "vdb name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "casetype",
+                        "in": "query",
+                        "description": "case type",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "casename",
+                        "in": "query",
+                        "description": "case name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "classid",
+                        "in": "query",
+                        "description": "class id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "headers": {
+                            "X-Rate-Limit": {
+                                "type": "integer",
+                                "format": "int32",
+                                "description": ""
+                            },
+                            "X-Expires-After": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "date in UTC when token expires"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid username/password supplied"
+                    }
+                }
+            }
+        },
+        "/vdb/series": {
+            "get": {
+                "tags": [
+                    "vdb"
+                ],
+                "summary": "Get series from target vdb, class, item/layer and variable",
+                "description": "Get series from target vdb, class, item/layer and variable",
+                "operationId": "",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "vdbname",
+                        "in": "query",
+                        "description": "vdb name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "casetype",
+                        "in": "query",
+                        "description": "case type",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "casename",
+                        "in": "query",
+                        "description": "case name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "classid",
+                        "in": "query",
+                        "description": "class id",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "itemname",
+                        "in": "query",
+                        "description": "item name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "itemnum",
+                        "in": "query",
+                        "description": "item number, based on 1",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "layername",
+                        "in": "query",
+                        "description": "layer name, just for class id is 2 and 9",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "layernum",
+                        "in": "query",
+                        "description": "layer number, just for class id is 2 and 9, based on 1",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "varname",
+                        "in": "query",
+                        "description": "variable name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "varnum",
+                        "in": "query",
+                        "description": "variable number, based on 0",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "headers": {
+                            "X-Rate-Limit": {
+                                "type": "integer",
+                                "format": "int32",
+                                "description": ""
+                            },
+                            "X-Expires-After": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "date in UTC when token expires"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid username/password supplied"
+                    }
+                }
+            }
+        }
+    }
+}
