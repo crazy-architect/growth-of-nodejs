@@ -17,3 +17,11 @@ Here I choose the solution based on Nodejs addons mechnism. I have tested the ff
 
 ##### 3. review the code in src fold
 
+
+### Reference
+* [C++ and Node.js: An Unholy Combination….But Oh So Right](https://benfarrell.com/2013/01/03/c-and-node-js-an-unholy-combination-but-oh-so-right/)
+* [Node.js Addons](https://nodeaddons.com/)
+* [Nodejs](https://nodejs.org/dist/latest-v12.x/docs/api/addons.html)
+* [samples on Nodejs Website](https://github.com/nodejs/node-addon-examples)
+* [
+
